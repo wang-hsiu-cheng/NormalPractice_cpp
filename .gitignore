@@ -1,0 +1,8 @@
+.vscode
+*.exe
+*.cbp
+*.o
+*.layout
+
+*.jpg
+*.pdf
