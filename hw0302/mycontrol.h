@@ -17,11 +17,12 @@ void initialize(double x, double y, double a)
     yCoordinate = y;
     angle = a;
     initialized = '1';
-    return ;
+    return;
 }
 int forward(double length)
 {
-    if (initialized == '0') return -1;
+    if (initialized == '0')
+        return -1;
     moveLength = length;
     xCoordinate += moveLength * cos(angle);
     yCoordinate += moveLength * sin(angle);
@@ -29,25 +30,27 @@ int forward(double length)
 }
 int clock_turn(double x)
 {
-    if (initialized == '0') return -1;
+    if (initialized == '0')
+        return -1;
     angle -= x;
     return 0;
 }
 int counterclock_turn(double x)
 {
-    if (initialized == '0') return -1;
+    if (initialized == '0')
+        return -1;
     angle += x;
     return 0;
 }
 int print()
 {
-    if (initialized == '0') 
+    if (initialized == '0')
         return -1;
-    if (abs(xCoordinate) <= 0.0001) 
-        printf("position: (%.f,%g), angle: %g\n", xCoordinate, yCoordinate, angle / 3.14159 * 180);
-    else if (abs(yCoordinate) <= 0.0001) 
-        printf("position: (%g,%.f), angle: %g\n", xCoordinate, yCoordinate, angle / 3.14159 * 180);
-    else 
-        printf("position: (%g,%g), angle: %g\n", xCoordinate, yCoordinate, angle / 3.14159 * 180);
+    if (abs(xCoordinate) <= 0.0001)
+        printf("position: (%.2f,%.2g), angle: %.2g\n", xCoordinate, yCoordinate, angle);
+    else if (abs(yCoordinate) <= 0.0001)
+        printf("position: (%.2g,%.2f), angle: %.2g\n", xCoordinate, yCoordinate, angle);
+    else
+        printf("position: (%.2g,%.2g), angle: %.2g\n", xCoordinate, yCoordinate, angle);
     return 0;
 }

@@ -6,11 +6,11 @@
 
 int main()
 {
-    initialize(0, 0, M_PI / 2);
-    forward(5.1);
-    clock_turn(M_PI / 3);
-    forward(4);
-    counterclock_turn(M_PI / 3 * 2);
+    initialize(0, 0, 0);
+    counterclock_turn(M_PI / 6);
+    forward(5);
+    print();
+    clock_turn(M_PI / 6);
     forward(4);
     print();
     return 0;
